@@ -1,0 +1,12 @@
+D:\OOTPISP\Laba1\Lab1\Lab1\bin\Debug\Lab1.exe.config
+D:\OOTPISP\Laba1\Lab1\Lab1\bin\Debug\Lab1.exe
+D:\OOTPISP\Laba1\Lab1\Lab1\bin\Debug\Lab1.pdb
+D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.csprojAssemblyReference.cache
+D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.Properties.Resources.resources
+D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.csproj.GenerateResource.cache
+D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.exe
+D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.pdb
+D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.Form1.resources
+D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.AllForms.MeatForm.resources
+D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.AllForms.ComplexDishesForm.resources
+D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.AllForms.DessertsForm.resources
