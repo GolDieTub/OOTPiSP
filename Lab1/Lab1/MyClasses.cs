@@ -15,7 +15,7 @@ namespace Lab1
 		public double Calorie_content;
 		public double Price;
 
-		public MenuItem(string name, int count, double price, double calorie_content)
+		public MenuItem(string name, int count, double calorie_content, double price)
 		{
 			this.Name = name;
 			this.Count = count;
@@ -73,6 +73,7 @@ namespace Lab1
 			this.WithMeat = withMeat;
 			this.ColdSoup = coldSoup;
 			this.LiquidType = liquidType;
+			this.Serving_size = serving_size;
 			this.Category = TCategorys.Soups;
 		}
 	}
@@ -85,6 +86,7 @@ namespace Lab1
 		public Meat(TMeatType meatType, TServing_size serving_size, string name, int count, double price, double calorie_content) : base(serving_size, name, count, price, calorie_content)
 		{
 			this.MeatType = meatType;
+			this.Serving_size = serving_size;
 			this.Category = TCategorys.Meat;
 		}
 	}
@@ -130,6 +132,7 @@ namespace Lab1
 		public Snacks(TFromWhat fromWhat, TServing_size serving_size, string name, int count, double price, double calorie_content) : base(serving_size, name, count, price, calorie_content)
 		{
 			this.FromWhat = fromWhat;
+			this.Category = TCategorys.Snacks;
 		}
 	}
 }

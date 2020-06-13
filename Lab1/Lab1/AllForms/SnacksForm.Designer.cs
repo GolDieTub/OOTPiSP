@@ -36,6 +36,11 @@
             this.Calories = new System.Windows.Forms.TextBox();
             this.Count = new System.Windows.Forms.TextBox();
             this.Name = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cmbFromWhat = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbServingSize = new System.Windows.Forms.ComboBox();
+            this.txtServingSize = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label4
@@ -102,11 +107,66 @@
             this.Name.Size = new System.Drawing.Size(150, 38);
             this.Name.TabIndex = 8;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(383, 382);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(258, 55);
+            this.button1.TabIndex = 105;
+            this.button1.Text = "Готово";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cmbFromWhat
+            // 
+            this.cmbFromWhat.FormattingEnabled = true;
+            this.cmbFromWhat.Location = new System.Drawing.Point(477, 134);
+            this.cmbFromWhat.Name = "cmbFromWhat";
+            this.cmbFromWhat.Size = new System.Drawing.Size(184, 39);
+            this.cmbFromWhat.TabIndex = 107;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(255, 126);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(206, 46);
+            this.label7.TabIndex = 106;
+            this.label7.Text = "FromWhat";
+            // 
+            // cmbServingSize
+            // 
+            this.cmbServingSize.FormattingEnabled = true;
+            this.cmbServingSize.Location = new System.Drawing.Point(477, 260);
+            this.cmbServingSize.Name = "cmbServingSize";
+            this.cmbServingSize.Size = new System.Drawing.Size(184, 39);
+            this.cmbServingSize.TabIndex = 109;
+            // 
+            // txtServingSize
+            // 
+            this.txtServingSize.AutoSize = true;
+            this.txtServingSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtServingSize.Location = new System.Drawing.Point(227, 243);
+            this.txtServingSize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtServingSize.Name = "txtServingSize";
+            this.txtServingSize.Size = new System.Drawing.Size(243, 46);
+            this.txtServingSize.TabIndex = 108;
+            this.txtServingSize.Text = "Serving Size";
+            // 
             // SnacksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 462);
+            this.Controls.Add(this.cmbServingSize);
+            this.Controls.Add(this.txtServingSize);
+            this.Controls.Add(this.cmbFromWhat);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -115,7 +175,7 @@
             this.Controls.Add(this.Calories);
             this.Controls.Add(this.Count);
             this.Controls.Add(this.Name);
-            this.Name = "SnacksForm";
+            //this.Name = "SnacksForm";
             this.Text = "SnacksForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -132,5 +192,10 @@
         private System.Windows.Forms.TextBox Calories;
         private System.Windows.Forms.TextBox Count;
         private System.Windows.Forms.TextBox Name;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmbFromWhat;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmbServingSize;
+        private System.Windows.Forms.Label txtServingSize;
     }
 }

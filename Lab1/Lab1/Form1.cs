@@ -15,39 +15,28 @@ namespace Lab1
         public Form1()
         {
             InitializeComponent();
-            window = this;
-            listView1.View = View.Details;
             foreach (string i in Enum.GetNames(typeof(MenuItem.TCategorys)))
             {
                 comboBox1.Items.Add(i);
             }
         }
         public static Form1 window = null;
-        public static List<MenuItem> Catalog = new List<MenuItem>();
+        public static List<MenuItem> AllOdj = new List<MenuItem>();
         public delegate void UpdateMethod(object obj, int index);
 
         public static Creator[] Creators = { new ComplexDishesCreator(), new DessertsCreator(), new MeatCreator(), new SaladsCreator(), new SnacksCreator(), new SoupCreator()};
 
         public static object[] GetCommonData(TextBox Name, TextBox Count, TextBox Caloris, TextBox Price)
         {
-            object[] values = new object[5];
-            if (Name.Text != "" && Cloth.Text != "")
+            object[] values = new object[4];
+            if (Name.Text != "" && Count.Text != "")
             {
                 values[0] = (string)Name.Text;
-                values[1] = (string)Cloth.Text;
+                values[1] = Convert.ToInt32(Count.Text);
             }
             else
             {
                 MessageBox.Show("В одном из текстовых полей нет данных!!");
-                return null;
-            }
-            if (Color.SelectedItem != null)
-            {
-                values[4] = (MenuItem.TColor)Enum.Parse(typeof(MenuItem.TColor), Color.SelectedItem.ToString());
-            }
-            else
-            {
-                MessageBox.Show("В одном из комбо полей нет данных!!");
                 return null;
             }
             try
@@ -61,11 +50,11 @@ namespace Lab1
             }
             try
             {
-                values[2] = Convert.ToInt32(Length.Text);
+                values[2] = Convert.ToDouble(Caloris.Text);
             }
             catch (FormatException)
             {
-                MessageBox.Show("Не верно введена длина");
+                MessageBox.Show("Не верно введено значение количества каллорий");
                 return null;
             }
             return values;
@@ -78,7 +67,7 @@ namespace Lab1
                     object obj = null;
                     Form form = Creators[comboBox1.SelectedIndex].Create(AddObject, obj, -1);
                     form.Show();
-            }
+                }
             
         }
 
@@ -86,12 +75,12 @@ namespace Lab1
         {
             if (ind == -1)
             {
-                Catalog.Add((MenuItem)Obj);
+                AllOdj.Add((MenuItem)Obj);
             }
             else
             {
-                Catalog.RemoveAt(ind);
-                Catalog.Insert(ind, (MenuItem)Obj);
+                AllOdj.RemoveAt(ind);
+                AllOdj.Insert(ind, (MenuItem)Obj);
             }
             ShowListView();
         }
@@ -100,7 +89,7 @@ namespace Lab1
         {
             int i = 0;
             listView1.Items.Clear();
-            foreach (MenuItem item in Catalog)
+            foreach (MenuItem item in AllOdj)
             {
                     AddLinetoListView();
                     listView1.Items[i].SubItems[0].Text = item.Category.ToString();
@@ -123,5 +112,33 @@ namespace Lab1
             Form1.window.listView1.Items.Add(lvi);
         }
 
+        private void btUpdate_Click(object sender, EventArgs e)
+        {
+            int j = 0;
+            for (int i = 0; i <= AllOdj.Count - 1; i++)
+            {
+                    if (listView1.Items[j].Selected)
+                    {
+                        int ind = comboBox1.Items.IndexOf(listView1.Items[j].SubItems[0].Text);
+                        Form form = Creators[ind].Create(AddObject, AllOdj[i], i);
+                        form.Show();
+                    }
+                    j++;
+            }
+        }
+
+        private void btDelete_Click(object sender, EventArgs e)
+        {
+            int j = 0;
+            for (int i = 0; i <= AllOdj.Count - 1; i++)
+            {
+                    if (listView1.Items[j].Selected)
+                    {
+                        AllOdj.RemoveAt(i);
+                        listView1.Items.RemoveAt(j);
+                    }
+                    j++;
+            }
+        }
     }
 }

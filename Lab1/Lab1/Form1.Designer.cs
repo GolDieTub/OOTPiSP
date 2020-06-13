@@ -68,6 +68,7 @@
             this.btUpdate.TabIndex = 3;
             this.btUpdate.Text = "Изменить";
             this.btUpdate.UseVisualStyleBackColor = true;
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
             // btDelete
             // 
@@ -77,6 +78,7 @@
             this.btDelete.TabIndex = 4;
             this.btDelete.Text = "Удалить";
             this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // listView1
             // 

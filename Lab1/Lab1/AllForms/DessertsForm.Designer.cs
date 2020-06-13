@@ -36,6 +36,9 @@
             this.Calories = new System.Windows.Forms.TextBox();
             this.Count = new System.Windows.Forms.TextBox();
             this.Name = new System.Windows.Forms.TextBox();
+            this.cmbDesserts = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label4
@@ -102,11 +105,45 @@
             this.Name.Size = new System.Drawing.Size(150, 38);
             this.Name.TabIndex = 8;
             // 
+            // cmbDesserts
+            // 
+            this.cmbDesserts.FormattingEnabled = true;
+            this.cmbDesserts.Location = new System.Drawing.Point(351, 108);
+            this.cmbDesserts.Name = "cmbDesserts";
+            this.cmbDesserts.Size = new System.Drawing.Size(206, 39);
+            this.cmbDesserts.TabIndex = 104;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(334, 51);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(263, 46);
+            this.label10.TabIndex = 103;
+            this.label10.Text = "Desserts type";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(325, 373);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(258, 55);
+            this.button1.TabIndex = 105;
+            this.button1.Text = "Готово";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // DessertsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 462);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmbDesserts);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -115,7 +152,7 @@
             this.Controls.Add(this.Calories);
             this.Controls.Add(this.Count);
             this.Controls.Add(this.Name);
-            this.Name = "DessertsForm";
+            //this.Name = "DessertsForm";
             this.Text = "DessertsForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -132,5 +169,8 @@
         private System.Windows.Forms.TextBox Calories;
         private System.Windows.Forms.TextBox Count;
         private System.Windows.Forms.TextBox Name;
+        private System.Windows.Forms.ComboBox cmbDesserts;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button1;
     }
 }
