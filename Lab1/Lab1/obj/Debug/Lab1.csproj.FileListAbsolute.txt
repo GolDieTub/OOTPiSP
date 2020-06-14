@@ -29,3 +29,8 @@ D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.AllForms.SaladsForm.resources
 D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.AllForms.SnacksForm.resources
 D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.AllForms.SoupForm.resources
 D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.csproj.CopyComplete
+D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.ChoosePlugForm.resources
+D:\OOTPISP\Laba1\Lab1\Lab1\bin\Debug\PluginInterface.dll
+D:\OOTPISP\Laba1\Lab1\Lab1\bin\Debug\PluginInterface.pdb
+D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Interop.DSOFile.dll
+D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.csproj.ResolveComReference.cache

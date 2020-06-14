@@ -24,6 +24,7 @@ namespace Lab1
             saveFileDialog1.Filter = "Binary file|*.bin|Json file|*.json|Text file|*.txt";
             openFileDialog1.Filter = "Binary file|*.bin|Json file|*.json|Text file|*.txt";
         }
+        public static Plug CurPlugin = null;
         public static Form1 window = null;
         public static List<MenuItem> AllOdj = new List<MenuItem>();
         public delegate void UpdateMethod(object obj, int index);
@@ -144,32 +145,44 @@ namespace Lab1
                     j++;
             }
         }
-
-        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
-                return;
-            string filename = saveFileDialog1.FileName;
-            byte[] data = FileCreators[saveFileDialog1.FilterIndex - 1].FileSave(AllOdj);
-            using (FileStream fs = new FileStream(filename, FileMode.Create))
-            {
-                fs.Write(data, 0, data.Length);
-            }
-        }
-
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             string filename = openFileDialog1.FileName;
+            byte[] serialized = null;
             byte[] data = null;
             using (FileStream fs = new FileStream(filename, FileMode.Open))
             {
-                data = new byte[(int)fs.Length];
-                fs.Read(data, 0, data.Length);
+                serialized = new byte[(int)fs.Length];
+                fs.Read(serialized, 0, serialized.Length);
+            }
+            int res = Plug.FindPlugin(filename);
+
+            switch (res)
+            {
+                case -1:
+                    MessageBox.Show("Соответствующий плагин отсутствует!!!");
+                    return;
+                case 1:
+                    data = Plug.ActivatePlug(Form1.CurPlugin, serialized, false);
+                    break;
+                case 0:
+                    data = serialized;
+                    break;
             }
             AllOdj = FileCreators[openFileDialog1.FilterIndex - 1].FileOpen(data);
             ShowListView();
+        }
+
+        private void сохранитьToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            string filename = saveFileDialog1.FileName;
+            byte[] data = FileCreators[saveFileDialog1.FilterIndex - 1].FileSave(AllOdj);
+            ChoosePlugForm pluginForm = new ChoosePlugForm(data, filename);
+            pluginForm.Show();
         }
     }
 }
