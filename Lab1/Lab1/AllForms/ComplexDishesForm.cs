@@ -21,7 +21,7 @@ namespace Lab1.AllForms
             {
                 cmbServingSize.Items.Add(i);
             }
-            foreach (MenuItem item in Form1.Catalog)
+            foreach (MenuItem item in Form1.AllOdj)
             {
                 if (item.Category == MenuItem.TCategorys.Meat)
                     cmbMeat.Items.Add(item.Name);
@@ -49,8 +49,8 @@ namespace Lab1.AllForms
             HotDishes.TServing_size servingSize;
             if (cmbMeat.SelectedItem != null && cmbSoup.SelectedItem != null && cmbServingSize.SelectedItem != null)
             {
-                meat = (Meat)Form1.Catalog.Find(x => x.Name == cmbMeat.SelectedItem.ToString() && x.Category == MenuItem.TCategorys.Meat);
-                soups = (Soups)Form1.Catalog.Find(x => x.Name == cmbSoup.SelectedItem.ToString() && x.Category == MenuItem.TCategorys.Soups);
+                meat = (Meat)Form1.AllOdj.Find(x => x.Name == cmbMeat.SelectedItem.ToString() && x.Category == MenuItem.TCategorys.Meat);
+                soups = (Soups)Form1.AllOdj.Find(x => x.Name == cmbSoup.SelectedItem.ToString() && x.Category == MenuItem.TCategorys.Soups);
                 servingSize = (HotDishes.TServing_size)Enum.Parse(typeof(HotDishes.TServing_size), cmbServingSize.SelectedItem.ToString());
             }
             else
@@ -74,7 +74,7 @@ namespace Lab1.AllForms
             object obj2 = cmbSoup.SelectedItem;
             cmbMeat.Items.Clear();
             cmbSoup.Items.Clear();
-            foreach (MenuItem item in Form1.Catalog)
+            foreach (MenuItem item in Form1.AllOdj)
             {
                 if (item.Category == MenuItem.TCategorys.Meat)
                     cmbMeat.Items.Add(item.Name);
@@ -101,18 +101,18 @@ namespace Lab1.AllForms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            object obj = Form1.Catalog.Find(x => x.Name == cmbMeat.SelectedItem.ToString() && x.Category == MenuItem.TCategorys.Meat);
+            object obj = Form1.AllOdj.Find(x => x.Name == cmbMeat.SelectedItem.ToString() && x.Category == MenuItem.TCategorys.Meat);
             int ind = (int)(obj as Meat).Category;
-            int i = Form1.Catalog.IndexOf((Meat)obj);
+            int i = Form1.AllOdj.IndexOf((Meat)obj);
             Form form = Form1.Creators[ind].Create(Form1.window.AddObject, obj, i);
             form.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            object obj = Form1.Catalog.Find(x => x.Name == cmbSoup.SelectedItem.ToString() && x.Category == MenuItem.TCategorys.Soups);
+            object obj = Form1.AllOdj.Find(x => x.Name == cmbSoup.SelectedItem.ToString() && x.Category == MenuItem.TCategorys.Soups);
             int ind = (int)(obj as Soups).Category;
-            int i = Form1.Catalog.IndexOf((Soups)obj);
+            int i = Form1.AllOdj.IndexOf((Soups)obj);
             Form form = Form1.Creators[ind].Create(Form1.window.AddObject, obj, i);
             form.Show();
         }
@@ -123,7 +123,7 @@ namespace Lab1.AllForms
             object obj2 = cmbSoup.SelectedItem;
             cmbMeat.Items.Clear();
             cmbSoup.Items.Clear();
-            foreach (MenuItem item in Form1.Catalog)
+            foreach (MenuItem item in Form1.AllOdj)
             {
                 if (item.Category == MenuItem.TCategorys.Meat)
                     cmbMeat.Items.Add(item.Name);

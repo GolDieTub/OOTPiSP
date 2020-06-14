@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Lab1
 {
@@ -15,17 +16,20 @@ namespace Lab1
         public Form1()
         {
             InitializeComponent();
+            window = this;
             foreach (string i in Enum.GetNames(typeof(MenuItem.TCategorys)))
             {
                 comboBox1.Items.Add(i);
             }
+            saveFileDialog1.Filter = "Binary file|*.bin|Json file|*.json|Text file|*.txt";
+            openFileDialog1.Filter = "Binary file|*.bin|Json file|*.json|Text file|*.txt";
         }
         public static Form1 window = null;
         public static List<MenuItem> AllOdj = new List<MenuItem>();
         public delegate void UpdateMethod(object obj, int index);
 
         public static Creator[] Creators = { new ComplexDishesCreator(), new DessertsCreator(), new MeatCreator(), new SaladsCreator(), new SnacksCreator(), new SoupCreator()};
-
+        public static FileCreator[] FileCreators = { new BinFileCreator(), new JsonFileCreator(), new TextFileCreator() };
         public static object[] GetCommonData(TextBox Name, TextBox Count, TextBox Caloris, TextBox Price)
         {
             object[] values = new object[4];
@@ -139,6 +143,33 @@ namespace Lab1
                     }
                     j++;
             }
+        }
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            string filename = saveFileDialog1.FileName;
+            byte[] data = FileCreators[saveFileDialog1.FilterIndex - 1].FileSave(AllOdj);
+            using (FileStream fs = new FileStream(filename, FileMode.Create))
+            {
+                fs.Write(data, 0, data.Length);
+            }
+        }
+
+        private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            string filename = openFileDialog1.FileName;
+            byte[] data = null;
+            using (FileStream fs = new FileStream(filename, FileMode.Open))
+            {
+                data = new byte[(int)fs.Length];
+                fs.Read(data, 0, data.Length);
+            }
+            AllOdj = FileCreators[openFileDialog1.FilterIndex - 1].FileOpen(data);
+            ShowListView();
         }
     }
 }

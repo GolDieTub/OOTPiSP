@@ -28,7 +28,7 @@ namespace Lab1.AllForms
                 Count.Text = (obj as Desserts).Count.ToString();
                 Calories.Text = (obj as Desserts).Calorie_content.ToString();
                 Price.Text = (obj as Desserts).Price.ToString();
-                cmbDesserts.SelectedItem = (obj as Desserts).MyDesserts;
+                cmbDesserts.SelectedItem = (obj as Desserts).MyDesserts.ToString();
             }
             Add_Display = method;
             ObjectIndex = index;

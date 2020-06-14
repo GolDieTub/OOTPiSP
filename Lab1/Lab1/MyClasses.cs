@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace Lab1
 {
 	[Serializable]
-	public class MenuItem
+	public  class MenuItem
 	{
 		public enum TCategorys { ComplexDishes, Desserts, Meat, Salads, Snacks, Soups };
 		public TCategorys Category;

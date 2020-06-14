@@ -31,8 +31,11 @@ namespace Lab1.AllForms
                 Count.Text = (obj as Soups).Count.ToString();
                 Calories.Text = (obj as Soups).Calorie_content.ToString();
                 Price.Text = (obj as Soups).Price.ToString();
-                cmbLiquidType.SelectedItem = (obj as Soups).LiquidType;
-                cmbServingSize.SelectedItem = (obj as Soups).Serving_size;
+                cmbLiquidType.SelectedItem = (obj as Soups).LiquidType.ToString();
+                cmbServingSize.SelectedItem = (obj as Soups).Serving_size.ToString();
+                chbWithMeat.Checked = (obj as Soups).WithMeat;
+                chbColdSoup.Checked = (obj as Soups).ColdSoup;
+
             }
             Add_Display = method;
             ObjectIndex = index;

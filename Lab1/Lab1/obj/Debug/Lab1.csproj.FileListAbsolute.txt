@@ -28,3 +28,4 @@ F:\OOTPISP\Laba1\Lab1\Lab1\bin\Debug\Lab1.pdb
 D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.AllForms.SaladsForm.resources
 D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.AllForms.SnacksForm.resources
 D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.AllForms.SoupForm.resources
+D:\OOTPISP\Laba1\Lab1\Lab1\obj\Debug\Lab1.csproj.CopyComplete

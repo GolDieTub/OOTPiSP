@@ -31,8 +31,8 @@ namespace Lab1.AllForms
                 Count.Text = (obj as Salads).Count.ToString();
                 Calories.Text = (obj as Salads).Calorie_content.ToString();
                 Price.Text = (obj as Salads).Price.ToString();
-                cmbEddition.SelectedItem = (obj as Salads).Eddition;
-                cmbServingSize.SelectedItem = (obj as Salads).Serving_size;
+                cmbEddition.SelectedItem = (obj as Salads).Eddition.ToString();
+                cmbServingSize.SelectedItem = (obj as Salads).Serving_size.ToString();
             }
             Add_Display = method;
             ObjectIndex = index;
